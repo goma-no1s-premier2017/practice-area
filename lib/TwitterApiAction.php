@@ -100,8 +100,8 @@ class TwitterApiAction
         curl_close($curl);
 
         // 取得したデータ
-        $json = substr( $res1, $res2['header_size'] ) ;		 // 取得したデータ(JSONなど)
-        $header = substr( $res1, 0, $res2['header_size'] ) ; // レスポンスヘッダー
+        $json = substr($res1, $res2['header_size']);         // 取得したデータ(JSONなど)
+        $header = substr($res1, 0, $res2['header_size']); // レスポンスヘッダー
         // JSONを配列に変換
         $aryRes = json_decode($json, true) ;
 
