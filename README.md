@@ -5,7 +5,7 @@
 /bat/getRealDonaldTrump.php  
   
 TwitterApi用の簡易的なクラス  
-/lib/TwitterApiAction.php  
+/lib/TwitterApiAction.php    
   
 ■ 問二  
 実行ファイル  
@@ -13,3 +13,4 @@ TwitterApi用の簡易的なクラス  
   
 WebScraping用の簡易的なクラス  
 /lib/WebScrapingAction.php  
+  
