@@ -5,8 +5,6 @@
 class WebScrapingAction
 {
     protected $html;
-    protected $item_count;
-    protected $counter = 0;
 
     /**
      * コンストラクタ
