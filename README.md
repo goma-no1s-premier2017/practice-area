@@ -9,7 +9,7 @@ TwitterApi用の簡易的なクラス
   
 ■ 問二  
 実行ファイル  
-/bat/getLuxuryHotelsInOkinawa.php  
+/bat/getHighClassHotelsInOkinawa.php  
   
 WebScraping用の簡易的なクラス  
 /lib/WebScrapingAction.php  
