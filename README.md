@@ -1,16 +1,19 @@
 # practice-area  
+
+## 2017/12プレミアテスト
+<dl>
+  <dt>■問一</dt>
+  <dt>実行ファイル</dt>
+  <dd>/bat/getRealDonaldTrump.php</dd>
+  <dt>TwitterApi用の簡易的なクラス</dt>
+  <dd>/lib/TwitterApiAction.php  </dd>
+</dl> 
   
-■ 問一  
-実行ファイル  
-/bat/getRealDonaldTrump.php  
-  
-TwitterApi用の簡易的なクラス  
-/lib/TwitterApiAction.php  
-  
-■ 問二  
-実行ファイル  
-/bat/getHighClassHotelsInOkinawa.php  
-  
-WebScraping用の簡易的なクラス  
-/lib/WebScrapingAction.php  
+<dl>
+  <dt>■問二</dt>
+  <dt>実行ファイル</dt>
+  <dd>/bat/getHighClassHotelsInOkinawa.php</dd>
+  <dt>TwitterApi用の簡易的なクラス</dt>
+  <dd>/lib/WebScrapingAction.php</dd>
+</dl> 
   
