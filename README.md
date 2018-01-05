@@ -13,7 +13,7 @@
   <dt>■問二</dt>
   <dt>実行ファイル</dt>
   <dd>/bat/getHighClassHotelsInOkinawa.php</dd>
-  <dt>TwitterApi用の簡易的なクラス</dt>
+  <dt>ウェブスクレイピング用の簡易的なクラス</dt>
   <dd>/lib/WebScrapingAction.php</dd>
 </dl> 
   
