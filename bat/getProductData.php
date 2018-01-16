@@ -90,14 +90,14 @@ try {
         ]
     ];
 
-    // [TODO]現在のページは1 - 3
+    // [TODO]ページ数は1 - 3
     $html = "";
     $count = 1;
     while (true) {
         // 各ページのデータを取得する
         list($response, $http_response_header) = FilesController::fileGetContents("{$admin_url}?page={$count}", $context, true);
 
-        // [TODO]今回のWebページでは404エラーで終了
+        // [TODO]今回は404エラーで終了と判断する
         if (preg_match("/404 Not Found/", $http_response_header[0]) !== 0) {
             break;
         }
