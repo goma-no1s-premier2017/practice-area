@@ -11,15 +11,17 @@ class WebScrapingAction
      *
      * @param string $url スクレイピング対象URL
      */
-    public function __construct($url)
+    public function __construct($url = '', $isGetContents = true)
     {
-        // 文字コード対策をしたHTML情報を保管しておく
-        $html = @file_get_contents($url);
-        if ($html === false) {
-            echo '指定のURLを読み込むことが出来ませんでした。' . PHP_EOL;
-            exit;
-        } else {
-            $this->html = mb_convert_encoding($html, "utf-8", "sjis-win");
+        if ($isGetContents === true) {
+            // 文字コード対策をしたHTML情報を保管しておく
+            $html = @file_get_contents($url);
+            if ($html === false) {
+                echo '指定のURLを読み込むことが出来ませんでした。' . PHP_EOL;
+                exit;
+            } else {
+                $this->html = mb_convert_encoding($html, "utf-8", "sjis-win");
+            }
         }
     }
 
@@ -44,5 +46,10 @@ class WebScrapingAction
             echo 'エレメントを正しく取得できませんでした。' . PHP_EOL;
             exit;
         }
+    }
+
+    public function setHtml($html)
+    {
+        $this->html = $html;
     }
 }
