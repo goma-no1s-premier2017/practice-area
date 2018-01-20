@@ -10,6 +10,14 @@
   <dt>ＣＳＶファイルの名称</dt>
   <dd>ProductData_[Ymd]_[His].csv</dd>
 </dl> 
+
+<dl>
+  <dt>■問二</dt>
+  <dt>実行ファイル</dt>
+  <dd>/bat/showExcelData.php</dd>
+  <dt>対象のエクセルファイル</dt>
+  <dd>/files/excel/data.xlsx</dd>
+</dl> 
   
 ## 2017/12プレミアテスト
 <dl>
