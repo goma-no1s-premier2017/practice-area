@@ -50,6 +50,6 @@ class WebScrapingAction
 
     public function setHtml($html)
     {
-        $this->html = $html;
+        $this->html = mb_convert_encoding($html, "HTML-ENTITIES", "auto");
     }
 }
