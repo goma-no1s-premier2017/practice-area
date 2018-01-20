@@ -1,6 +1,6 @@
 <?php
 /**
- * ウェブアクセス関連処理
+ * ファイル関連処理
  */
 class FilesController
 {
