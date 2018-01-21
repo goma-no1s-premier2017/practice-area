@@ -31,15 +31,22 @@ echo "合計点" . PHP_EOL;
 // 個人個人のデータを出力する
 foreach ($aryExcelData["body"] as $row_data) {
     $sum = 0;
-    foreach ($row_data as $header => $body) {
+    foreach ($aryExcelData["header"] as $header) {
+        // 空白セル対応
+        if (!isset($row_data[$header])) {
+            $row_data[$header] = "";
+        }
+
         if ($header == "姓") {
-            $family_name = $body;
+            $family_name = $row_data[$header];
         } elseif ($header == "名") {
-            $name = "{$family_name} {$body}";
+            $name = "{$family_name} {$row_data[$header]}";
             echo $name . str_pad("", (12 - strlen(mb_convert_encoding($name, "SJIS-win", "UTF-8"))), " ");
         } else {
-            echo $body . str_pad("", (7 - strlen(mb_convert_encoding($body, "SJIS-win", "UTF-8"))), " ");
-            $sum += $body;
+            if (is_numeric($row_data[$header])) {
+                $sum += $row_data[$header];
+            }
+            echo $row_data[$header] . str_pad("", (7 - strlen(mb_convert_encoding($row_data[$header], "SJIS-win", "UTF-8"))), " ");
         }
     }
     echo $sum . PHP_EOL;
