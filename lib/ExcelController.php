@@ -56,7 +56,7 @@ class ExcelController
                     $is_first = false;
 
                 } elseif ($header_counter > $active_row) {
-                    // 対象範囲内のセルに空白があった場合は次の列へ
+                    // 対象範囲内のセルに空白があった場合
                     $active_row++;
                     $row_counter++;
                     continue;
