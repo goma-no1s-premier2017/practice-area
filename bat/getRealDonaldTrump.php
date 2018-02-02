@@ -6,8 +6,10 @@
 date_default_timezone_set('America/New_York');
 
 // クラスファイルの読み込み
-$lib_path = preg_replace('/\/bat$/', '/lib/', dirname(__FILE__));
-require_once $lib_path . 'TwitterApiAction.php';
+define("DIR_ROOT", preg_replace('/bat$/', '', dirname(__FILE__)));
+require_once DIR_ROOT . 'define.php';
+require_once DIR_LIB . 'RequestApi.php';
+require_once DIR_LIB . 'TwitterApiAction.php';
 
 // アクセス情報
 $consumerKey       = "UhuBsj54DbRnnHGQYaPywHmAi";
