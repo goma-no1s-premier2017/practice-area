@@ -63,49 +63,7 @@ class TwitterApiAction
         }
 
         // Apiコール
-        return $this->RequestApi($request_url, $context);
-    }
-
-    /**
-     * TwitterAPIのリクエストを行う
-     *
-     * @param string $request_url リクエストURL
-     * @param array $context コンテキスト情報
-     * @return boolean|mixed
-     */
-    protected function RequestApi($request_url, $context) {
-        // curlでリクエストを実施する
-        $curl = curl_init();
-        if ($curl === false) {
-            return false;
-        }
-
-        curl_setopt_array($curl, [
-            CURLOPT_URL            => $request_url,
-            CURLOPT_HEADER         => 1,
-            CURLOPT_CUSTOMREQUEST  => $context['http']['method'],
-            CURLOPT_SSL_VERIFYPEER => false,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_HTTPHEADER     => $context['http']['header'],
-            CURLOPT_TIMEOUT        => 10
-        ]);
-
-        // POST系エンドポイントの場合
-        if ($context['http']['method'] == 'POST' && isset($context['http']['content'])) {
-            curl_setopt($curl, CURLOPT_POSTFIELDS, $context['http']['content']);
-        }
-
-        $res1 = curl_exec($curl);
-        $res2 = curl_getinfo($curl);
-        curl_close($curl);
-
-        // 取得したデータ
-        $json = substr($res1, $res2['header_size']);         // 取得したデータ(JSONなど)
-        $header = substr($res1, 0, $res2['header_size']); // レスポンスヘッダー
-        // JSONを配列に変換
-        $aryRes = json_decode($json, true) ;
-
-        return $aryRes;
+        return RequestApi::request($request_url, $context);
     }
 
     /**
