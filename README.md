@@ -1,11 +1,19 @@
 # practice-area
 ## 2018/02プレミアテスト
 <dl>
+  <dt>■問一</dt>
+  <dt>実行ファイル</dt>
+  <dd>/bat/201802q1_getQrCodes.php</dd>
+  <dt>作成されるQRコードの格納ディレクトリ</dt>
+  <dd>/files/qr_code/</dd>
+</dl>
+<dl>
   <dt>■問二</dt>
   <dt>実行ファイル</dt>
   <dd>/bat/201802q2_MorphologicalAnalysis.php</dd>
   <dt>ライブラリ導入手順</dt>
-  <dd><code>
+  <dd>
+```
 
 $ # rootユーザ・centos7系で実行  
 $ # 各種インストールに必要なものをインストール  
@@ -52,7 +60,8 @@ $ systemctl restart httpd
 $ # 動作確認  
 $ php -r 'phpinfo();' | grep 'mecab' -i  
 
-</code></dd>
+```
+  </dd>
 </dl>
 
 ## 2018/01プレミアテスト
