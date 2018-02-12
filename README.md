@@ -14,7 +14,6 @@
   <dt>ライブラリ導入手順</dt>
   <dd>
 ```
-
 $ # rootユーザ・centos7系で実行  
 $ # 各種インストールに必要なものをインストール  
 $ yum -y install gcc-c++ patch  
@@ -59,7 +58,6 @@ $ systemctl restart httpd
   
 $ # 動作確認  
 $ php -r 'phpinfo();' | grep 'mecab' -i  
-
 ```
   </dd>
 </dl>
