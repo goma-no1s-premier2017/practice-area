@@ -6,7 +6,7 @@ class FilesController
 {
     public function fileGetContents($url, $context = [], $need_header = false)
     {
-        if (isset($cnotext['http']['method'])) {
+        if (!isset($context['http']['method'])) {
             return false;
         }
 
