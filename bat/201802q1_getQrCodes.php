@@ -39,6 +39,7 @@ $now = date("Ymd_his");
 if (!file_exists(DIR_QR_CODE)) {
     if (!mkdir(DIR_QR_CODE, 0777)) {
         echo "QRコードファイル格納用ディレクトリの作成に失敗しました。" . PHP_EOL;
+        exit;
     }
 }
 foreach ($response["response"] as $key => $png_data) {
