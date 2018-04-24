@@ -1,5 +1,5 @@
 <?php
-define("DIR_ROOT", preg_replace('/bat$/', '', dirname(__FILE__)));
+define("DIR_ROOT", preg_replace('/bat\/[a-zA-z0-9]+/', '', dirname(__FILE__)));
 require_once DIR_ROOT . 'define.php';
 
 // 課題のテキストを取得

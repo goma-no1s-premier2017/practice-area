@@ -1,6 +1,6 @@
 <?php
 // クラスファイルの読み込み
-define("DIR_ROOT", preg_replace('/bat$/', '', dirname(__FILE__)));
+define("DIR_ROOT", preg_replace('/bat\/[a-zA-z0-9]+/', '', dirname(__FILE__)));
 require_once DIR_ROOT . 'define.php';
 require_once DIR_LIB . 'RequestApi.php';
 

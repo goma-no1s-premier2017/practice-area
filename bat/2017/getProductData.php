@@ -9,7 +9,7 @@
  */
 try {
     // クラスファイルの読み込み
-    define("DIR_ROOT", preg_replace('/bat$/', '', dirname(__FILE__)));
+    define("DIR_ROOT", preg_replace('/bat\/[a-zA-z0-9]+/', '', dirname(__FILE__)));
     require_once DIR_ROOT . 'define.php';
     require_once DIR_LIB . 'FilesController.php';
     require_once DIR_LIB . 'WebScrapingAction.php';
@@ -18,6 +18,7 @@ try {
     $email = "micky.mouse@no1s.biz";
     $password = "micky";
     $login_url  = "https://premier.no1s.biz/";
+    $FilesController = new FilesController();
 
     //===================
     // 自動ログイン処理
@@ -30,8 +31,8 @@ try {
     ];
 
     // ログイン画面へアクセスを行い、トークンを発行
-    list($response, $http_response_header) = FilesController::fileGetContents($login_url, $context, true);
-    $csrfToken = FilesController::getToken($http_response_header, "csrfToken");
+    list($response, $http_response_header) = $FilesController->fileGetContents($login_url, $context, true);
+    $csrfToken = $FilesController->getToken($http_response_header, "csrfToken");
     // 取得チェック
     if ($response === false || $csrfToken == "") {
         throw new Exception("CSRFトークンの発行に失敗しました。");
@@ -63,8 +64,8 @@ try {
     ];
 
     // ログイン時に発行されるharumafujiTokenを取得
-    list($response, $http_response_header) = FilesController::fileGetContents($login_url, $context, true);
-    $harumafujiToken = FilesController::getToken($http_response_header, "harumafuji");
+    list($response, $http_response_header) = $FilesController->fileGetContents($login_url, $context, true);
+    $harumafujiToken = $FilesController->getToken($http_response_header, "harumafuji");
 
     // 取得チェック
     if ($response === false || $harumafujiToken == "") {
@@ -95,7 +96,7 @@ try {
     $count = 1;
     while (true) {
         // 各ページのデータを取得する
-        list($response, $http_response_header) = FilesController::fileGetContents("{$admin_url}?page={$count}", $context, true);
+        list($response, $http_response_header) = $FilesController->fileGetContents("{$admin_url}?page={$count}", $context, true);
 
         // [TODO]今回は404エラーで終了と判断する
         if (preg_match("/404 Not Found/", $http_response_header[0]) !== 0) {
