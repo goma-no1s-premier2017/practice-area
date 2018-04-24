@@ -1,6 +1,6 @@
 <?php
 // クラスファイルの読み込み
-define("DIR_ROOT", preg_replace('/bat$/', '', dirname(__FILE__)));
+define("DIR_ROOT", preg_replace('/bat\/[a-zA-z0-9]+/', '', dirname(__FILE__)));
 require_once DIR_ROOT . 'define.php';
 require_once DIR_LIB . 'RequestApi.php';
 
@@ -39,6 +39,7 @@ $now = date("Ymd_his");
 if (!file_exists(DIR_QR_CODE)) {
     if (!mkdir(DIR_QR_CODE, 0777)) {
         echo "QRコードファイル格納用ディレクトリの作成に失敗しました。" . PHP_EOL;
+        exit;
     }
 }
 foreach ($response["response"] as $key => $png_data) {

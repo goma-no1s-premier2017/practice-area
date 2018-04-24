@@ -6,7 +6,7 @@
 date_default_timezone_set('America/New_York');
 
 // クラスファイルの読み込み
-define("DIR_ROOT", preg_replace('/bat$/', '', dirname(__FILE__)));
+define("DIR_ROOT", preg_replace('/bat\/[a-zA-z0-9]+/', '', dirname(__FILE__)));
 require_once DIR_ROOT . 'define.php';
 require_once DIR_LIB . 'RequestApi.php';
 require_once DIR_LIB . 'TwitterApiAction.php';
