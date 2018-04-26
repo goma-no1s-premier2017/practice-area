@@ -27,3 +27,5 @@ define("CONSUMER_KEY",        "");
 define("CONSUMER_SECRET",     "");
 define("ACCESS_TOKEN",        "");
 define("ACCESS_TOKEN_SECRET", "");
+
+define("MAX_REQUEST_COUNT", 10); // TwitterAPIリクエストの最大試行回数
