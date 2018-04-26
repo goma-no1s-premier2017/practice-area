@@ -67,7 +67,7 @@ try {
             if ($data !== false) {
                 // パス付ファイル名作成
                 $ext = substr($status['entities']['media'][0]["media_url_https"], strrpos($status['entities']['media'][0]["media_url_https"], '.') + 1);
-                $file_path = DIR_TWEET_IMAGE . "{$now}_{$img_count}.{$ext}";
+                $file_path = DIR_TWEET_IMAGE . "tweet_img_{$now}_{$img_count}.{$ext}";
 
                 // 画像の保存
                 $result = @file_put_contents($file_path, $data);
