@@ -8,3 +8,9 @@
   <dt>Twitter画像の命名規則</dt>
   <dd>twitter_img_[yyyymmdd]_[hhiiss]_[1-10の連番].[元画像の拡張子]</dd>
 </dl>
+
+<dl>
+  <dt>■問二</dt>
+  <dt>実行ファイル</dt>
+  <dd>/bat/2018/1804_q2_crawler.php</dd>
+</dl>
