@@ -1,7 +1,7 @@
 <?php
 /**
  * WebScraping用の簡易クラス
- */
+*/
 class WebScrapingAction
 {
     protected $html;
@@ -115,7 +115,7 @@ class WebScrapingAction
      * ウェブクローリング２
      * 並列リクエスト処理
      *
-     * [TODO]要調査500,503エラーが出たり、htmlが正しく取得できない場合がある
+     * [TODO]要調査 500,503エラーが出たり、htmlが正しく取得できない場合がある
      *
      * @param mixed $urls 初回だけstring
      * @return boolean
@@ -138,19 +138,19 @@ class WebScrapingAction
 
             $this->aryUniqueCheck[$url] = true;
 
-                $curl_opts[] = [
-                        CURLOPT_URL            => $url,
-                        CURLOPT_PRIVATE        => $url,
-                        CURLOPT_SSL_VERIFYPEER => false,
-                        CURLOPT_SSL_VERIFYHOST => false,
-                        CURLOPT_RETURNTRANSFER => true,
-                        CURLOPT_TIMEOUT        => CURL_TIMEOUT,
-                        CURLOPT_CONNECTTIMEOUT => CURL_TIMEOUT,
-                        // リダイレクト対策
-                        CURLOPT_FOLLOWLOCATION => true,
-                        CURLOPT_MAXREDIRS      => 100,
-                        CURLOPT_AUTOREFERER    => true,
-                ];
+            $curl_opts[] = [
+                    CURLOPT_URL            => $url,
+                    CURLOPT_PRIVATE        => $url,
+                    CURLOPT_SSL_VERIFYPEER => false,
+                    CURLOPT_SSL_VERIFYHOST => false,
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_TIMEOUT        => CURL_TIMEOUT,
+                    CURLOPT_CONNECTTIMEOUT => CURL_TIMEOUT,
+                    // リダイレクト対策
+                    CURLOPT_FOLLOWLOCATION => true,
+                    CURLOPT_MAXREDIRS      => 100,
+                    CURLOPT_AUTOREFERER    => true,
+            ];
         }
         if (empty($curl_opts)) {
             return true;
