@@ -184,6 +184,6 @@ class WebScrapingAction
             $hrefs[] = $element->nodeValue;
         }
 
-        return $this->webCrawling($hrefs);
+        return $this->WebCrawling2($hrefs);
     }
 }
