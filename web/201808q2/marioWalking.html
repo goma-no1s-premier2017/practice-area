@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>mario walking!</title>
+  <link rel="stylesheet" type="text/css" href="marioWalking.css">
+</head>
+<body class="bg-gray">
+  <div id="event-border">
+    <div id="event-area">
+      <div class="display">
+        <div class="move-box">
+          <img src="img/mario_1.png" id="mario-right-stand" class="active"/>
+          <img src="img/mario_2.png" id="mario-right0"/>
+          <img src="img/mario_3.png" id="mario-right1"/>
+          <img src="img/mario_4.png" id="mario-left-stand"/>
+          <img src="img/mario_5.png" id="mario-left0"/>
+          <img src="img/mario_6.png" id="mario-left1"/>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="marioWalking.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function (){
+    marioWalk.initialize('.display', '.move-box', 80);
+  });
+  </script>
+</body>
+</html>
