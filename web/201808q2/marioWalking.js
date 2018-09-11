@@ -3,10 +3,11 @@
  */
 var marioWalk = {
   displayWidth: null, // マリオが移動できる画面幅
-  mPosition: 200,     // マリオの立ち位置
   displayEl: null,    // マリオが移動する画面のエレメント
   moveBoxEl: null,    // マリオ移動用ボックスのエレメント
   mWidth: null,       // マリオ横幅
+  mPosition: 200,     // マリオの立ち位置
+  speed: 100,         // マリオ速度
 
   // [TODO]カーソルキーイベントのエラーハンドリングのためフラグを二つ作成
   isRightWalking: false, // 移動中判定フラグ
@@ -25,12 +26,13 @@ var marioWalk = {
     $('html').keydown(function(e) { marioWalk.confirmCursorDirection(e, 'start'); });
     $('html').keyup(function(e) { marioWalk.confirmCursorDirection(e, 'end'); });
     // クリックorタップイベント
-    $("#event-area").on('mousedown touchstart', displayEl, function(e) { marioWalk.confirmDirection(e, 'start'); });
-    $("#event-area").on('mouseup touchend', displayEl, function(e) { marioWalk.confirmDirection(e, 'end'); });
-    $("#event-border").on('mouseout', displayEl, function(e) {
+    $('#event-area').on('mousedown touchstart', displayEl, function(e) { marioWalk.confirmDirection(e, 'start'); });
+    $('#event-area').on('mouseup touchend', displayEl, function(e) { marioWalk.confirmDirection(e, 'end'); });
+    $('#event-border').on('mouseout', displayEl, function(e) {
       marioWalk.isRightWalking = false;
       marioWalk.isLeftWalking = false;
     });
+    $('.speed-change').on('change', function(e) { marioWalk.speed = e.currentTarget.value; e.currentTarget.blur(); });
   },
   // クリックしたカーソルの方向を判定
   confirmCursorDirection: function(e, action) {
@@ -159,6 +161,6 @@ var marioWalk = {
         marioWalk.displayEl.removeClass(dScroll);
         clearInterval(timer);
       }
-    }, 100);
+    }, this.speed);
   }
 };
