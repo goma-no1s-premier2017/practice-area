@@ -1,6 +1,6 @@
 <?php
 /**
- * TwitterAPIを利用して「JustinBieber」がアップした画像を10個取得する
+ * TwitterAPIを利用してJustinBieberが文言内に含まれるツイートの画像を10個取得する
  */
 try {
     // クラスファイルの読み込み
