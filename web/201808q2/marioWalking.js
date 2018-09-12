@@ -15,13 +15,14 @@ var marioWalk = {
 
   // 初期処理。必要な値とイベントをセット
   initialize: function(displayEl, moveBoxEl, mWidth) {
+    // ==== マリオの移動画面や位置の把握 ====
     this.displayEl = $(displayEl); // 移動画面
     this.moveBoxEl = $(moveBoxEl); // マリオ移動用ボックス
     this.mWidth    = mWidth;       // マリオの横幅
-
     // マリオ移動幅(0px ~ ([移動画面幅] - [マリオの横幅])px)
     this.displayWidth = this.displayEl.innerWidth() - mWidth;
-    // ※イベントセット
+
+    // ==== イベントセット ====
     // カーソルキーイベント
     $('html').keydown(function(e) { marioWalk.confirmCursorDirection(e, 'start'); });
     $('html').keyup(function(e) { marioWalk.confirmCursorDirection(e, 'end'); });
@@ -32,6 +33,7 @@ var marioWalk = {
       marioWalk.isRightWalking = false;
       marioWalk.isLeftWalking = false;
     });
+    // 速度調節イベント
     $('.speed-change').on('change', function(e) { marioWalk.speed = e.currentTarget.value; e.currentTarget.blur(); });
   },
   // クリックしたカーソルの方向を判定
@@ -153,7 +155,7 @@ var marioWalk = {
       current = next;
 
       // ====アニメーション終了判定====
-      // Objectの特性を利用。confirmファンクションでフラグを下ろすと終了する
+      // Objectの特性を利用。confirmファンクションでフラグが下りると終了する
       if ((direction === 'left' && !marioWalk.isLeftWalking)
           || (direction === 'right' && !marioWalk.isRightWalking)) {
         $('#mario-' + direction + '-stand').addClass('active');
