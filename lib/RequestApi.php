@@ -23,9 +23,12 @@ class RequestApi
                 CURLOPT_CUSTOMREQUEST  => $context['http']['method'],
                 CURLOPT_SSL_VERIFYPEER => false,
                 CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_HTTPHEADER     => $context['http']['header'],
                 CURLOPT_TIMEOUT        => 10
         ]);
+
+        if (isset($context['http']['header'])) {
+            curl_setopt($curl, CURLOPT_HTTPHEADER, $context['http']['content']);
+        }
 
         // POST系の場合
         if ($context['http']['method'] == 'POST' && isset($context['http']['content'])) {

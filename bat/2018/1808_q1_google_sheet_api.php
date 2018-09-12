@@ -25,7 +25,7 @@ try {
         $output .= "'" . implode("','", $row) . "',\n";
     }
     // UTF-8に変換して出力
-    echo mb_convert_encoding($output, "UTF-8");
+    echo mb_convert_encoding($output, "UTF-8", "auto");
 } catch (Exception $e) {
-    echo $e->getMessage() , PHP_EOL;
+    echo $e->getMessage() , "\n";
 }

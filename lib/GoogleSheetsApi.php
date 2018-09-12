@@ -61,7 +61,8 @@ class GoogleSheetsApi
      * @param array $options
      * @return boolean|mixed
      */
-    public function getSheetValues(string $range, array $options = []) {
+    public function getSheetValues(string $range, array $options = [])
+    {
         $requestUrl = self::BASE_URL . "{$this->spreadsheetId}/values/{$range}?fields=values&key={$this->apiKey}";
         if (!empty($options)) {
             $requestUrl .= '&' . http_build_query($options);
@@ -69,8 +70,7 @@ class GoogleSheetsApi
 
         $context = [
             'http' => [
-                'method' => 'GET',
-                'header' => []
+                'method' => 'GET'
             ]
         ];
 

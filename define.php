@@ -28,4 +28,7 @@ define("CONSUMER_SECRET",     "");
 define("ACCESS_TOKEN",        "");
 define("ACCESS_TOKEN_SECRET", "");
 
+// Google APIキー
+define("GOOGLE_API_KEY", "");
+
 define("MAX_REQUEST_COUNT", 10); // TwitterAPIリクエストの最大試行回数
