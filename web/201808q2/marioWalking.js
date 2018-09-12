@@ -30,8 +30,10 @@ var marioWalk = {
     $('#event-area').on('mousedown touchstart', displayEl, function(e) { marioWalk.confirmDirection(e, 'start'); });
     $('#event-area').on('mouseup touchend', displayEl, function(e) { marioWalk.confirmDirection(e, 'end'); });
     $('#event-border').on('mouseout', displayEl, function(e) {
-      marioWalk.isRightWalking = false;
-      marioWalk.isLeftWalking = false;
+      if (e.relatedTarget.tagName !== 'IMG' && !$(e.relatedTarget).hasClass('display')) {
+        marioWalk.isRightWalking = false;
+        marioWalk.isLeftWalking = false;
+      }
     });
     // 速度調節イベント
     $('.speed-change').on('change', function(e) { marioWalk.speed = e.currentTarget.value; e.currentTarget.blur(); });
