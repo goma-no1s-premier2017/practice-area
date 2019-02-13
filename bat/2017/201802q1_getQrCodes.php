@@ -3,7 +3,7 @@
 define("DIR_ROOT", preg_replace('/bat\/[a-zA-z0-9]+/', '', dirname(__FILE__)));
 require_once DIR_ROOT . 'define.php';
 require_once DIR_LIB . 'RequestApi.php';
-
+// test
 // curl用のオプションを作成
 $api = "https://api.qrserver.com/v1/create-qr-code/";
 $urls = [
